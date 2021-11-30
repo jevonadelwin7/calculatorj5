@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Calculator J5</title>
+</head>
+
+<body>
+  <script LANGUAGE="JavaScript">
+    function cek(){
+    if(form.angka1.value == "" || form.angka2.value == ""){
+    alert("data kosong"); //jika angka kosong maka pesan akan tampil
+    exit;
+    }
+    }
+    function tambah() {
+    cek(); //panggil function cek
+    a=eval(form.angka1.value); //mengisi variabel a dengan isi dari input name angka1
+    b=eval(form.angka2.value); //mengisi variabel b dengan isi dari input name angka2
+    c=a+b //menjumlahkan kedua variabel
+    form.total.value = c; //memberikan hasil penjumlahan ke input name total
+    }
+    
+    function reset() {
+    form.angka1.value="";
+    form.angka2.value="";
+    form.total.value = "";
+    }
+    </script>
+  
+  <div class="container mt-5">
+    <div class="card ">
+      <div class="card-header bg-primary text-white text-center">
+        J5-RO Calculator
+      </div>
+      <div class="card-body text-center">
+        <h5 class="card-title">Online Calculator</h5>
+
+        <form name=form class="text-center">
+          <div class="form-group">
+            <label for="nilaisatu">Tripan</label>
+            <input  type=text name="angka1" class="form-control" value="0" >
+          </div>
+          <div class="form-group">
+            <input type=text name="angka2" class="form-control" value="0">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="nilaisatu">Hasil</label>
+            <input type="text"  value="" name="total" type=text name="angka2" class="form-control text-center" value="0">
+          </div>
+          <br><br>
+          <button type=button name=submit onclick="tambah()" value="+" class="btn btn-primary">Submit</button>
+          <button type="submit" name="submit" onclick="reset()" value="Reset" class="btn btn-danger">Reset</button>
+        </form>
+        <br>
+      
+        
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
