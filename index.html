@@ -43,7 +43,12 @@
     sisa=eval(form.sisa.value);
     hasil=a+b+c+d+e-sisa 
     kali = hasil*10000
-    form.total.value ="Rp."+ kali; 
+
+		
+var	reverse = kali.toString().split('').reverse().join(''),
+	ribuan 	= reverse.match(/\d{1,3}/g);
+	ribuan	= ribuan.join('.').split('').reverse().join('');
+    form.total.value ="Rp."+ ribuan; 
     }
     
     function reset() {
