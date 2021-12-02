@@ -42,7 +42,7 @@
     e=eval(form.angka5.value); 
     sisa=eval(form.sisa.value);
     hasil=a+b+c+d+e-sisa 
-    form.total.value = hasil; 
+    form.total.value ="Rp."+ hasil; 
     }
     
     function reset() {
@@ -159,15 +159,15 @@
           </div>
           <br>
           <div class="form-group row">
-            <h1 for="tripan" class="col-sm-2 col-form-label text-center">Total Penjualan</h1>
+            <h1 for="tripan" class="col-sm-2 col-form-label text-center text-primary">Total Penjualan</h1>
             <div class="col-sm-10">
               <input type="text"  name="total" class="form-control text-center font-weight-bold"  value="0">
             </div>
           </div>
           <div class="form-group row">
-            <h1 for="tripan" class="col-sm-2 col-form-label text-center">Sisa Kartu</h1>
+            <h1 for="tripan" class="col-sm-2 col-form-label text-center text-danger">Sisa Kartu</h1>
             <div class="col-sm-10">
-              <input type="text"  name="total_kartu" class="form-control"  value="0">
+              <input type="text"  name="total_kartu" class="form-control text-center font-weight-bold"  value="0">
             </div>
           </div>
         </form>
