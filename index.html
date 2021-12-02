@@ -6,26 +6,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Calculator J5</title>
+  <style type="text/css">
+
+@media only screen and (max-width: 420px) {
+		.scroll{
+      display:block;
+     border: 5px solid blue;
+     border-radius: 20px;
+     padding:5px;
+     margin-top:5px;
+     width:300px;
+     height:300px;
+     overflow:auto;
+    }
+  }
+	</style>
 </head>
 
-<body>
-  <script LANGUAGE="JavaScript">
+<body style="background-color: azure;">
+    <script LANGUAGE="JavaScript">
     function cek(){
-    if(form.angka1.value == "" || form.angka2.value == ""){
+    if(form.angka1.value == "" || form.angka2.value == "" ||form.angka3.value == ""||form.angka4.value == ""||form.angka5.value == ""){
     alert("data kosong"); //jika angka kosong maka pesan akan tampil
     exit;
     }
     }
     function tambah() {
-    cek(); //panggil function cek
-    a=eval(form.angka1.value); //mengisi variabel a dengan isi dari input name angka1
-    b=eval(form.angka2.value); //mengisi variabel b dengan isi dari input name angka2
-    c=eval(form.angka3.value); //mengisi variabel a dengan isi dari input name angka1
+   // cek(); //panggil function cek
+    a=eval(form.angka1.value); 
+    b=eval(form.angka2.value); 
+    c=eval(form.angka3.value); 
     d=eval(form.angka4.value);
-    e=eval(form.angka5.value); //mengisi variabel a dengan isi dari input name angka1
-    hasil=a+b+c+d+e //menjumlahkan kedua variabel
-    form.total.value = hasil; //memberikan hasil penjumlahan ke input name total
+    e=eval(form.angka5.value); 
+    sisa=eval(form.sisa.value);
+    hasil=a+b+c+d+e-sisa 
+    form.total.value = hasil; 
     }
     
     function reset() {
@@ -33,49 +50,132 @@
     form.angka2.value="";
     form.total.value = "";
     }
+    
+    counter = 0 ;
+    function action()
+    {
+      counterNext = counter + 1;
+      document.getElementById("input"+counter).innerHTML = "<div class='trip text-center bg-info pt-2 pr-3 pl-3 pb-2'><div class='form-group row'><label for='tripan' class='col-sm-1 col-form-label text-white'>\Trip"+counterNext+"\</label><div class='col-sm-10'><input  type='number' name=\"angka"+counterNext+"\" class='form-control'  value=\"0\"></div></div></div><div id=\"input"+counterNext+"\"></div>";
+      counter++;    
+    }
     </script>
   
   <div class="container mt-5">
-    <div class="card ">
-      <div class="card-header bg-primary text-white text-center">
-        J5-RO Calculator
-      </div>
-      <div class="card-body text-center">
-        <h5 class="card-title">Online Calculator</h5>
 
-        <form name=form class="text-center">
-          <div class="form-group">
-            <label for="nilaisatu">Tripan</label>
-            <input  type=text name="angka1" class="form-control" value="0" >
+    <div class="card">
+      <div class="card-header bg-primary text-white text-center">
+        J5 Calculator
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">Online Calculator</h5>
+        <form class="" name=form>
+          <div class="scroll">
+          <div class="trip text-center bg-info pt-2 pr-3 pl-3 pb-2">
+            <div class="form-group row">
+            <label for="tripan" class="col-sm-1 col-form-label text-white">Trip 1</label>
+            <div class="col-sm-10">
+              <input type="number" name="angka1" class="form-control"  value="0">                    
+            </div>
+            </div>
           </div>
-          <div class="form-group">
-            <input type=text name="angka2" class="form-control" value="0">
+          <div class="trip text-center bg-info pt-2 pr-3 pl-3 pb-2" >
+            <div class="form-group row">
+            <label for="tripan" class="col-sm-1 col-form-label text-white">Trip 2</label>
+            <div class="col-sm-10">
+              <input type="number" name="angka2" class="form-control"  value="0">                    
+            </div>
+            </div>
           </div>
-          <div class="form-group">
-            <input type=text name="angka3" class="form-control" value="0">
+          <div class="trip text-center bg-info pt-2 pr-3 pl-3 pb-2">
+            <div class="form-group row">
+            <label for="tripan" class="col-sm-1 col-form-label text-white">Trip 3</label>
+            <div class="col-sm-10">
+              <input type="number" name="angka3" class="form-control"  value="0">                    
+            </div>
+            </div>
           </div>
-          <div class="form-group">
-            <input type=text name="angka4" class="form-control" value="0">
+          <div class="trip text-center bg-info pt-2 pr-3 pl-3 pb-2" >
+            <div class="form-group row">
+            <label for="tripan" class="col-sm-1 col-form-label text-white">Trip 4</label>
+            <div class="col-sm-10">
+              <input type="number" name="angka4" class="form-control"  value="0">                    
+            </div>
+            </div>
           </div>
-          <div class="form-group">
-            <input type=text name="angka5" class="form-control" value="0">
+          <div class="trip text-center bg-info pt-2 pr-3 pl-3 pb-2">
+            <div class="form-group row">
+            <label for="tripan" class="col-sm-1 col-form-label text-white">Trip 5</label>
+            <div class="col-sm-10">
+              <input type="number" name="angka5" class="form-control"  value="0">                    
+            </div>
+            </div>
+          </div>
+            <div id="input0">
+            </div>
+            <div class="text-center mt-4"><a  href="javascript:action();" type="button" class="btn btn-success btn-sm mx-auto mx-auto">Tambah trip</a>
+            </div>
+            <div class="form-group row bg-danger pb-4 mt-2">
+            <label for="tripan" class="col-sm-1 col-form-label text-white text-center">Sisa</label>
+            <div class="col-sm-10">
+              <input type="number" name="sisa" class="form-control text-center" value="0" >
+            </div>
+          </div>
+        </div><!-- Scroll end-->
+          <div class="row pb-3 bg-primary mt-2">
+            <div class="col text-center text-white">
+              Bonus
+              <input type="text" class="form-control text-center" name="bonus" value="0" >
+            </div>
+            <div class="col text-center text-white">
+              Bon
+              <input type="text" class="form-control text-center" name="bon" value="0">
+            </div>
+          </div>
+          <div class="row pb-3 bg-success mt-2">
+            <div class="col text-center text-white ">
+              9000 + kartu
+              <input type="text" class="form-control text-center" name="ninecard" value="0" >
+            </div>
+            <div class="col text-center text-white ">
+              9000
+              <input type="text" class="form-control text-center" name="nine" value="0">
+            </div>
+          </div>
+          <div class="row pb-3 bg-primary mt-2">
+            <div class="col text-center text-white">
+              8000
+              <input type="text" class="form-control text-center" name="ninecard" value="0" >
+            </div>
+            <div class="col text-center text-white">
+              Gratis
+              <input type="text" class="form-control text-center" name="nine" value="0">
+            </div>
+          </div>
+        <br>
+        <br>
+          <div class="butoon text-center">
+            <button type=button name=submit onclick="tambah()" value="+" class="btn btn-success">Hitung</button>
+            <button type="submit" name="submit" onclick="reset()" value="Reset" class="btn btn-danger">Reset</button>        
           </div>
           <br>
-          <div class="form-group">
-            <label for="nilaisatu">Hasil</label>
-            <input type="text"  value="" name="total" type=text name="angka2" class="form-control text-center" value="0">
+          <div class="form-group row">
+            <h1 for="tripan" class="col-sm-2 col-form-label text-center">Total Penjualan</h1>
+            <div class="col-sm-10">
+              <input type="text"  name="total" class="form-control text-center font-weight-bold"  value="0">
+            </div>
           </div>
-          <br><br>
-          <button type=button name=submit onclick="tambah()" value="+" class="btn btn-primary">Submit</button>
-          <button type="submit" name="submit" onclick="reset()" value="Reset" class="btn btn-danger">Reset</button>
+          <div class="form-group row">
+            <h1 for="tripan" class="col-sm-2 col-form-label text-center">Sisa Kartu</h1>
+            <div class="col-sm-10">
+              <input type="text"  name="total_kartu" class="form-control"  value="0">
+            </div>
+          </div>
         </form>
-        <br>
-      
-        
       </div>
     </div>
   </div>
-
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
