@@ -34,21 +34,43 @@
     }
     }
     function tambah() {
-   // cek(); //panggil function cek
+   // tripan
     a=eval(form.angka1.value); 
     b=eval(form.angka2.value); 
     c=eval(form.angka3.value); 
     d=eval(form.angka4.value);
     e=eval(form.angka5.value); 
     sisa=eval(form.sisa.value);
-    hasil=a+b+c+d+e-sisa 
+
+    // Bonus & Bon
+    bs=eval(form.bonus.value);
+    bn=eval(form.bon.value); 
+
+  //Kali 9000
+  sembilank=eval(form.ninecard.value);
+  sembilan=eval(form.nine.value); 
+  
+  //kali 8000 + Gratis
+  delapan=eval(form.eight.value);
+  free=eval(form.gratis.value);
+  
+  //pengeluaran
+  ex=eval(form.pengeluaran.value);
+
+//PERHITUNGAN AKHIR
+    
+    hasil=a+b+c+d+e-sisa-bs-bn-free 
+    sk= sembilank*1000
+    sn= sembilan*1000
+    dn= delapan*2000
     kali = hasil*10000
+    result = kali-sk-sn-dn-ex
 
 		
-var	reverse = kali.toString().split('').reverse().join(''),
+var	reverse = result.toString().split('').reverse().join(''),
 	ribuan 	= reverse.match(/\d{1,3}/g);
 	ribuan	= ribuan.join('.').split('').reverse().join('');
-    form.total.value ="Rp."+ ribuan; 
+    form.result.value ="Rp."+ ribuan; 
     }
     
     function reset() {
@@ -126,7 +148,7 @@ var	reverse = kali.toString().split('').reverse().join(''),
               <input type="number" name="sisa" class="form-control text-center" value="0" >
             </div>
           </div>
-        </div><!-- Scroll end-->
+          </div><!-- Scroll end-->
           <div class="row pb-3 bg-primary mt-2">
             <div class="col text-center text-white">
               Bonus
@@ -150,15 +172,21 @@ var	reverse = kali.toString().split('').reverse().join(''),
           <div class="row pb-3 bg-primary mt-2">
             <div class="col text-center text-white">
               8000
-              <input type="text" class="form-control text-center" name="ninecard" value="0" >
+              <input type="text" class="form-control text-center" name="eight" value="0" >
             </div>
             <div class="col text-center text-white">
               Gratis
-              <input type="text" class="form-control text-center" name="nine" value="0">
+              <input type="text" class="form-control text-center" name="gratis" value="0">
             </div>
           </div>
-        <br>
-        <br>
+          <div class="row pb-3 bg-secondary mt-2">
+            <div class="col text-center text-white">
+              Pengeluaran
+              <input type="text" class="form-control text-center" name="pengeluaran" value="0" placeholder="cth: 200000" >
+            </div>
+          </div>
+         <br>
+         <br>
           <div class="butoon text-center">
             <button type=button name=submit onclick="tambah()" value="+" class="btn btn-success">Hitung</button>
             <button type="submit" name="submit" onclick="reset()" value="Reset" class="btn btn-danger">Reset</button>        
@@ -167,7 +195,7 @@ var	reverse = kali.toString().split('').reverse().join(''),
           <div class="form-group row">
             <h1 for="tripan" class="col-sm-2 col-form-label text-center text-primary">Total Penjualan</h1>
             <div class="col-sm-10">
-              <input type="text"  name="total" class="form-control text-center font-weight-bold"  value="0">
+              <input type="text"  name="result" class="form-control text-center font-weight-bold"  value="0">
             </div>
           </div>
           <div class="form-group row">
